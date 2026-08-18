@@ -201,18 +201,22 @@ if (counterSection) {
 
 // ===== ACTIVE NAV LINK ON CURRENT PAGE =====
 function updateActiveNavLink() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const fullPath = decodeURIComponent(window.location.pathname).toLowerCase();
+  let currentFile = fullPath.split('/').pop().split('#')[0];
+  
+  if (!currentFile || currentFile === 'index.html' || currentFile === '' || !currentFile.endsWith('.html')) {
+    currentFile = 'index.html';
+  }
   
   navAnchors.forEach(anchor => {
     const href = anchor.getAttribute('href');
-    if (!href) return;
-    
-    if (href.startsWith('http') || href.startsWith('https') || anchor.classList.contains('nav-cta')) {
+    if (!href || href.startsWith('http') || href.startsWith('https') || anchor.classList.contains('nav-cta')) {
       return;
     }
 
-    const targetPage = href.split('#')[0];
-    if (targetPage === currentPath || (currentPath === '' && targetPage === 'index.html')) {
+    const targetPage = href.split('#')[0].toLowerCase();
+    
+    if (targetPage === currentFile) {
       anchor.classList.add('active');
     } else {
       anchor.classList.remove('active');
