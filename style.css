@@ -213,11 +213,11 @@ ul {
   width: 100%;
   z-index: 1000;
   padding: 18px 0;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(200, 169, 106, 0.08);
-  transition: var(--transition);
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.12);
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -280,6 +280,8 @@ ul {
   display: flex;
   align-items: center;
   gap: 26px;
+  padding: 4px 0;
+  overflow: visible;
 }
 
 .nav-links a {
@@ -302,18 +304,30 @@ ul {
   border-bottom-color: #C8A96A !important;
 }
 
-.nav-cta,
-.nav-cta:hover,
-.nav-cta.active {
+.nav-cta {
   color: #ffffff !important;
   font-weight: 600 !important;
   border-bottom: none !important;
-  padding-bottom: 0 !important;
-  padding: 10px 22px !important;
+  padding: 10px 24px !important;
   font-size: 0.84rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.8px !important;
   white-space: nowrap !important;
+  overflow: visible !important;
+  border: 1px solid var(--gold-start) !important;
+  border-radius: 4px !important;
+  margin-left: 4px;
+}
+
+.nav-cta:hover {
+  background: var(--gold-gradient) !important;
+  color: #0a0a0a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(200, 169, 106, 0.35) !important;
+}
+
+.nav-cta.active {
+  color: #ffffff !important;
 }
 
 .hamburger {
