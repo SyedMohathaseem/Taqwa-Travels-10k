@@ -12,11 +12,11 @@ const navbar = document.querySelector('.navbar');
 function getNavbarThreshold() {
   const hero = document.querySelector('.hero, .page-header');
   if (hero) {
-    // Trigger at 50% of the hero/header height
-    return hero.offsetHeight * 0.5;
+    // Trigger exactly when hero section scrolls out of view
+    return hero.offsetHeight - navbar.offsetHeight;
   }
   // Fallback for pages without a hero
-  return window.innerHeight * 0.4;
+  return window.innerHeight * 0.8;
 }
 
 window.addEventListener('scroll', () => {
