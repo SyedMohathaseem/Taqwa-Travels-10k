@@ -199,26 +199,29 @@ if (counterSection) {
   counterObserver.observe(counterSection);
 }
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
-const sections = document.querySelectorAll('section[id]');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.scrollY >= sectionTop - 200) {
-      current = section.getAttribute('id');
-    }
-  });
-
+// ===== ACTIVE NAV LINK ON CURRENT PAGE =====
+function updateActiveNavLink() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  
   navAnchors.forEach(anchor => {
-    anchor.classList.remove('active');
-    if (anchor.getAttribute('href') === `#${current}`) {
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+    
+    if (href.startsWith('http') || href.startsWith('https') || anchor.classList.contains('nav-cta')) {
+      return;
+    }
+
+    const targetPage = href.split('#')[0];
+    if (targetPage === currentPath || (currentPath === '' && targetPage === 'index.html')) {
       anchor.classList.add('active');
+    } else {
+      anchor.classList.remove('active');
     }
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
 
 // ===== PARALLAX SUBTLE EFFECT ON HERO =====
 window.addEventListener('scroll', () => {
