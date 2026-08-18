@@ -212,17 +212,17 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 18px 0;
   transition: var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(15, 15, 15, 0.95);
+  background: rgba(15, 15, 15, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(200, 169, 106, 0.1);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.15);
 }
 
 .navbar .container {
@@ -230,19 +230,20 @@ ul {
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
+  max-width: 1360px;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .navbar-brand .logo-img {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 6px;
   object-fit: contain;
   background: transparent;
@@ -257,31 +258,31 @@ ul {
 
 .navbar-brand .brand-name {
   font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-white);
   letter-spacing: 1px;
 }
 
 .navbar-brand .brand-tag {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: var(--gold-start);
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 26px;
 }
 
 .nav-links a {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-light);
-  font-weight: 400;
-  letter-spacing: 0.4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   position: relative;
   text-transform: uppercase;
   white-space: nowrap;
@@ -293,7 +294,7 @@ ul {
   bottom: -4px;
   left: 0;
   width: 0;
-  height: 1.5px;
+  height: 2px;
   background: var(--gold-gradient);
   transition: var(--transition);
 }
@@ -309,10 +310,11 @@ ul {
 }
 
 .nav-cta {
-  padding: 8px 18px !important;
-  font-size: 0.78rem !important;
+  padding: 10px 22px !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.8px !important;
   white-space: nowrap !important;
 }
 
