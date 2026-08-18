@@ -9,8 +9,19 @@ window.addEventListener('load', () => {
 // ===== NAVBAR SCROLL =====
 const navbar = document.querySelector('.navbar');
 
+function getNavbarThreshold() {
+  const hero = document.querySelector('.hero, .page-header');
+  if (hero) {
+    // Trigger at 50% of the hero/header height
+    return hero.offsetHeight * 0.5;
+  }
+  // Fallback for pages without a hero
+  return window.innerHeight * 0.4;
+}
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
+  const threshold = getNavbarThreshold();
+  if (window.scrollY > threshold) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
