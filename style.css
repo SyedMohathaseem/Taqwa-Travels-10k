@@ -212,7 +212,7 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 16px 0;
   transition: var(--transition);
 }
 
@@ -229,17 +229,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar-brand .logo-img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 6px;
   object-fit: contain;
   background: transparent;
@@ -254,7 +257,7 @@ ul {
 
 .navbar-brand .brand-name {
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-white);
   letter-spacing: 1px;
@@ -271,16 +274,17 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 18px;
 }
 
 .nav-links a {
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   color: var(--text-light);
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   position: relative;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -305,10 +309,11 @@ ul {
 }
 
 .nav-cta {
-  padding: 10px 24px !important;
-  font-size: 0.82rem !important;
+  padding: 8px 18px !important;
+  font-size: 0.78rem !important;
   text-transform: uppercase !important;
-  letter-spacing: 1px !important;
+  letter-spacing: 0.5px !important;
+  white-space: nowrap !important;
 }
 
 .hamburger {
@@ -1527,6 +1532,17 @@ a.service-card:hover .service-icon svg {
 }
 
 @media (max-width: 1024px) {
+  .nav-links {
+    gap: 12px;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.2px;
+  }
+  .nav-cta {
+    padding: 6px 14px !important;
+    font-size: 0.75rem !important;
+  }
   .about-grid {
     gap: 40px;
     grid-template-columns: 1fr;
