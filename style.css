@@ -256,13 +256,15 @@ ul {
   mix-blend-mode: lighten;
 }
 
-.navbar-brand .brand-text {
+.navbar-brand .brand-text,
+.brand-text {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
-.navbar-brand .brand-name {
+.navbar-brand .brand-name,
+.brand-name {
   font-family: 'Cinzel', serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -270,12 +272,14 @@ ul {
   letter-spacing: 1px;
 }
 
-.navbar-brand .brand-tag {
+.navbar-brand .brand-tag,
+.brand-tag {
   font-size: 0.68rem;
   color: var(--gold-start);
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -1357,13 +1361,27 @@ a.service-card:hover .service-icon svg {
   padding-bottom: 60px;
 }
 
+.footer-about .brand-text {
+  margin-bottom: 16px;
+}
+
 .footer-about .brand-name {
   font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-white);
-  margin-bottom: 16px;
   display: block;
+}
+
+.footer-about .brand-tag {
+  font-size: 0.72rem;
+  color: var(--gold-start);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  display: block;
+  margin-top: 2px;
 }
 
 .footer-about p {
