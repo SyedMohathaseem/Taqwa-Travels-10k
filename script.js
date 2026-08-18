@@ -9,19 +9,10 @@ window.addEventListener('load', () => {
 // ===== NAVBAR SCROLL =====
 const navbar = document.querySelector('.navbar');
 
-function getNavbarThreshold() {
-  const hero = document.querySelector('.hero, .page-header');
-  if (hero) {
-    // Trigger exactly when hero section scrolls out of view
-    return hero.offsetHeight - navbar.offsetHeight;
-  }
-  // Fallback for pages without a hero
-  return window.innerHeight * 0.8;
-}
-
 window.addEventListener('scroll', () => {
-  const threshold = getNavbarThreshold();
-  if (window.scrollY > threshold) {
+  // Turn dark as soon as user starts scrolling (80px threshold)
+  // Return to transparent when back at the very top
+  if (window.scrollY > 80) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
