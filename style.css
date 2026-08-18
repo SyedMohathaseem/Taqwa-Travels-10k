@@ -297,8 +297,8 @@ ul {
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:not(.nav-cta):hover,
+.nav-links a:not(.nav-cta).active {
   color: #C8A96A !important;
   font-weight: 600 !important;
   border-bottom-color: #C8A96A !important;
@@ -308,6 +308,7 @@ ul {
   color: #ffffff !important;
   font-weight: 600 !important;
   border-bottom: none !important;
+  border-bottom-color: transparent !important;
   padding: 10px 24px !important;
   font-size: 0.84rem !important;
   text-transform: uppercase !important;
@@ -317,20 +318,28 @@ ul {
   border: 1px solid var(--gold-start) !important;
   border-radius: 4px !important;
   margin-left: 4px;
-  background: transparent;
+  background: transparent !important;
 }
 
-.nav-cta:hover {
-  background: var(--gold-gradient) !important;
-  color: #0a0a0a !important;
+.nav-cta:hover,
+.nav-cta:focus,
+.nav-cta:active {
+  background: linear-gradient(135deg, #C8A96A, #e2c27d) !important;
+  color: #111111 !important;
   font-weight: 700 !important;
+  border-color: transparent !important;
+  border-bottom: none !important;
+  border-bottom-color: transparent !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(200, 169, 106, 0.4) !important;
+  box-shadow: 0 6px 24px rgba(200, 169, 106, 0.45) !important;
 }
 
 .nav-cta.active {
   color: #ffffff !important;
+  border-bottom: none !important;
+  border-bottom-color: transparent !important;
 }
+
 
 .hamburger {
   display: none;
